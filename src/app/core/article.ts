@@ -1,7 +1,7 @@
-export class article{
-    titre! : string;
-    contenu! : string;
-    auteur! : string;
-    date! : string;
-    categorie! : string;
-    }
+export class Article {
+    titre !: string;
+    contenu !: string;
+    auteur !: string;
+    date!: string;
+    categorie !: string ;
+}

@@ -3,4 +3,4 @@ export class Emploi{
     titre!:string;
     entreprise!:string;
     etat!:boolean;
-}
+    }

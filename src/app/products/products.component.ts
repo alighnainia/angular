@@ -1,34 +1,27 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { Product } from '../core/product';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Product } from '../core/products';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit{
   products: Product[]=[];
-
   constructor() { }
 
   ngOnInit(): void {
-    this.products=[
-      {id: '1', title: 'T-shirt 1', quantity: 0, price: 18, like: 0, picture:'https://static.pullandbear.net/2/photos/2022/I/0/2/p/9247/599/712/9247599712_1_1_3.jpg?t=1663000629947'},
-      {id: '2', title: "T-shirt 2",  quantity: 10, price: 21, like: 0, picture:'https://static.pullandbear.net/2/photos/2022/I/0/2/p/9247/599/712/9247599712_1_1_3.jpg?t=1663000629947'},
-      {id: '3', title: "T-shirt 3",  quantity: 8, price: 16, like: 0, picture:'https://static.pullandbear.net/2/photos/2022/I/0/2/p/9247/599/712/9247599712_1_1_3.jpg?t=1663000629947'},
-    ]
-    
-    
+    this.products=[{id: "1", title: "T-shirt 1", price: 180, quantity: 30, like: 200, picture:"https://img.freepik.com/photos-gratuite/t-shirts-blancs-espace-copie-fond-gris_53876-104920.jpg?w=2000"},
+    {id: "2", title: "T-shirt 2", price: 200, quantity: 10, like: 2,picture:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg"},
+    {id: "3", title: "T-shirt 3", price: 50, quantity: 8, like: 90,picture:"https://media.gq.com/photos/5ca7ad6d1656fe4e4c2710d7/master/w_1280%2Cc_limit/GQ-Best-Stuff-T's-lemongrass-3x2.jpg"},]
   }
- Buy(id:string){
-  //this.products.map((product)=>{
-    //if(product.id.match(id)) {
-      //product.quantity=product.quantity-1;
-    //}
-  //})
-  this.products.map((product)=>product.id.match(id)?product.quantity--:'product not found')
-  //ki nebda bech na3mlou traitement sans else tkoun haka:
-  //this.products.map((product)=>product.id.match(id)&&product.quantity--)
- }
+Buy(id:string){
+  //this.products.map((products)=>{
+    //if(products.id.match(id)){
+     // products.quantity=products.quantity-1;
+    //}})
+    //OU
+    this.products.map((products=>products.id.match(id)&&products.quantity-- ))
 
+}
 }

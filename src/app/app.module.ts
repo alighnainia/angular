@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
-import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
+import { OffreEmploiComponentComponent } from './offre-emploi-component/offre-emploi-component.component';
 import { FormsModule } from '@angular/forms';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ArticlesComponent } from './articles/articles.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { ArticleComponent } from './article/article.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { ArticlesComponent } from './articles/articles.component';
     NavbarComponent,
     ProductsComponent,
     FooterComponent,
-    OffresEmploiComponent,
-    NotFoundComponent,
-    ArticlesComponent
+    OffreEmploiComponentComponent,
+    NotFoundComponentComponent,
+    ArticleComponent,
+    AddProductComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,

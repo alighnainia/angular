@@ -1,0 +1,51 @@
+<form #f="ngForm" (ngSubmit)="ajouter()"> 
+    <fieldset>
+        <legend>Informations generales</legend>
+
+    <div class="mt-4 p-2"></div>
+    Nom : <input  class="form-control"  type="text" name="Nom" [(ngModel)]="Nom" #Noms="ngModel" required minlength="3" >
+    <div class="alert alert-danger" *ngIf="Noms.touched && Noms.invalid">
+    <div *ngIf="Noms.errors?.['required']">Nom is required</div>
+    <div *ngIf="Noms.errors?.['minlength']">Nom must have at least 3 CH</div>
+    </div>
+
+    email  : <input  class="form-control"  type="text" name="email" [(ngModel)]="email" #emaiil="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}+@esprit.tn$"  >
+    <div class="alert alert-danger" *ngIf="emaiil.touched && emaiil.invalid">
+    <div *ngIf="emaiil.errors?.['required']">Email is required</div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Informations de payement</legend>
+    <div class="mt-4 p-2"></div>
+    Type Carte : <input  type="text" class="form-control" name="Type" [(ngModel)]="Type" #Types="ngModel" required >
+    <div class="alert alert-danger" *ngIf="Types.touched && Types.invalid">
+    <div *ngIf="Types.errors?.['required']">Type is required</div>
+    </div>
+
+    Numero Carte : <input  type="number" class="form-control"  name="Num" [(ngModel)]="Num" #Numm="ngModel" required min="16">
+    <div class="alert alert-danger" *ngIf="Numm.touched && Numm.invalid">
+    <div *ngIf="Numm.errors?.['required']" >Num is required</div>
+    <div *ngIf="Numm.errors?.['min']">Num must be positif</div>
+
+</div>
+Date experation : <input  type="date" class="form-control" name="Date" [(ngModel)]="Date" #Datee="ngModel" required minlength="3">
+    <div class="alert alert-danger" *ngIf="Datee.touched && Datee.invalid">
+    <div *ngIf="Datee.errors?.['required']">Title is required</div>
+    <div *ngIf="Datee.errors?.['minlength']">Title must have at least 3 CH</div>
+    </div>
+    Code : <input  type="password" class="form-control"  name="code" [(ngModel)]="Num" #code="ngModel" required>
+    <div class="alert alert-danger" *ngIf="code.touched && code.invalid">
+    <div *ngIf="code.errors?.['required']" >code is required</div>
+    </div>
+</fieldset>
+
+</form>
+<input type="submit" class="form-control btn btn-success" value="Ajouter" [disabled]="f.invalid">
+
+
+{{template.Nom}}
+{{template.email}}
+{{template.Type}}
+{{template.Num}}
+{{template.Date}}
+{{template.code}}

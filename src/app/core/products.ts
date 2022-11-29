@@ -1,4 +1,3 @@
-
 export class Product{
     id!:string;
     title!:string;
@@ -6,4 +5,5 @@ export class Product{
     quantity!:number ;
     like!:number;
     picture!:string;
+    
 }

@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularsae7": {
+    "application4SAE7": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularsae7",
+            "outputPath": "dist/application4-sae7",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angularsae7:build:production"
+              "browserTarget": "application4SAE7:build:production"
             },
             "development": {
-              "browserTarget": "angularsae7:build:development"
+              "browserTarget": "application4SAE7:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularsae7:build"
+            "browserTarget": "application4SAE7:build"
           }
         },
         "test": {
@@ -108,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "angularsae7"
+  "defaultProject": "application4SAE7"
 }

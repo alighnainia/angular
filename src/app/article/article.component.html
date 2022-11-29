@@ -1,0 +1,12 @@
+<H1>{{titre}}</H1>
+<div *ngFor="let a of listeArticles; index as i" style="padding-inline: 15px; padding-block: 20px;">
+    <fieldset *ngIf="a.categorie!='Travail' && i+1<=numberOfArticles" class="w-25" style="position: relative; border-width: 1px; border-style: solid ;"  [ngStyle]="{'color': (a.categorie=='Education') ? 'blue' : 'black', 'border-color': (a.categorie=='Education') ? 'blue' : 'black'}">
+        <legend style="background-color: white; position: absolute; top: 0;transform: translateY(-50%); left: 2%; max-width: max-content; padding-inline: 14px;">{{a.titre}}</legend>
+        <div class="mt-4 p-2">
+            <p>Auteur: {{a.auteur}}</p>
+            <p>Date: {{a.date}}</p>
+            <p>Contenu: {{a.contenu}}</p>
+        </div>
+    </fieldset>
+</div>
+<input class="mb-2" [ngModel]="numberOfArticles" (ngModelChange)="changeNumberOfArticles($event)"  style="width: 70%;"/>
